@@ -1,0 +1,15 @@
+.main_empty {
+    position: relative; //была позиция absolute
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+
+    &_empty_icon {
+        margin-bottom: 20px;
+    }
+
+    &_empty_text {
+        font-weight: 400;
+    }
+}

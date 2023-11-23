@@ -1,0 +1,118 @@
+@import './variables.scss';
+
+html {
+    height: 100vh;
+}
+
+body {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: normal;
+    color: var(--font-color);
+    margin: 0;
+    width: 100%;
+    background-color: var(--background-color);
+}
+
+body.open-modal {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+// For js
+
+// Open modal
+
+body.open-modal {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+// Night theme 
+
+body.night-theme {
+
+    & .input {
+        border: 1px solid $beige-color;
+        color: $beige-color;
+        background-color: $black-color;
+
+        &::placeholder {
+            color: $dark-grey-color;
+        }
+
+        &:hover,
+        &:focus-visible {
+            outline: 2px solid $dark-grey-color;
+        }
+    }
+
+    & .settings {
+        &-search-icon {
+            color: $beige-color;
+        }
+
+        &-theme {
+
+            &-day {
+                opacity: 1;
+                transition: opacity 0.3s ease;
+            }
+
+            &-night {
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+        }
+    }
+
+    & .main-list-item.checked .main-list-item-text {
+        color: rgba(255, 255, 255, 0.50);
+    }
+
+    & .modal {
+        &-wrapper {
+            background-color: $black-color;
+            border: 1px solid $beige-color;
+        }
+
+        &-cancel {
+            background-color: transparent;
+
+            &:hover,
+            &:focus-visible,
+            &:active {
+                background-color: transparent;
+            }
+        }
+    }
+}

@@ -1,0 +1,93 @@
+@import '@/variables.scss';
+
+.list_item {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    padding: 17px 0;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid $purple-light-color;
+    }
+
+    &_btn {
+        position: relative;
+        padding: 0;
+        width: 26px;
+        height: 26px;
+        min-width: 26px;
+        border: 1px solid var(--purple, $purple-color);
+        background-color: transparent;
+        border-radius: 2px;
+        margin-right: 17px;
+        transition: background-color 0.3s ease,
+            box-shadow 0, 3s ease;
+
+        &:hover,
+        &:focus-visible,
+        &:active {
+            background-color: transparent;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            background-image: url('../img/tick.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 15px;
+            height: 15px;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+    }
+
+    &_text {
+        padding-right: 10px;
+        transition: color 0.3s ease,
+            text-decoration 0.3s ease;
+        word-break: break-all;
+
+        @media (max-width: 480px) {
+            font-size: 14px;
+        }
+    }
+
+    &_btn_wrapper {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    &_btn_edit {
+        margin-right: 10px;
+
+        & svg .list_item_path {
+            transition: stroke 0.3s ease;
+        }
+
+        &:hover svg .list_item_path,
+        &:focus-visible svg .list_item_path,
+        &:active svg .list_item_path {
+            stroke: $purple-color;
+        }
+    }
+
+    &_btn_delete {
+        & svg .list_item_path {
+            transition: stroke 0.3s ease;
+        }
+
+        &:hover svg .list_item_path,
+        &:focus-visible svg .list_item_path,
+        &:active svg .list_item_path {
+            stroke: $red-color;
+        }
+    }
+}

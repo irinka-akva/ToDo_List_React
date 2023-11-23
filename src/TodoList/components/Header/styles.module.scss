@@ -1,0 +1,14 @@
+
+.settings {
+    padding-bottom: 35px;
+
+    &_wrapper {
+        display: flex;
+        gap: 16px;
+        justify-content: space-between;
+
+        @media (max-width: 480px) {
+            flex-wrap: wrap;
+        }
+    }
+}

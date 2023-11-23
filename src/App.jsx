@@ -1,9 +1,12 @@
-import TodoList from './TodoList'
-import './App.css'
+import TodoList from './TodoList';
+import './App.scss';
 
 function App() {
-
-  return <TodoList />
+  return (
+  <div className='container'>
+  <TodoList />
+  </div>
+  )
 }
 
 export default App

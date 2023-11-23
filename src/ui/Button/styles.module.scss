@@ -1,0 +1,23 @@
+@import '@/variables.scss';
+
+.btn {
+    color: $beige-color;
+    font-family: $main-font;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: $purple-color;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease,
+        box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0px 0px 4px 0px transparent;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+        background-color: $purple-dark-color;
+        box-shadow: 0px 0px 4px 0px $purple-color;
+        outline: none;
+    }
+}

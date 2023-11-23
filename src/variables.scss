@@ -1,0 +1,49 @@
+$purple-color: #6C63FF;
+$purple-dark-color: #5850DD;
+$purple-light-color: rgba(108, 99, 255, 0.5);
+$light-purple-color: rgba(108, 99, 255, 0.20);
+$outline-color: rgba(108, 99, 255, 0.40);
+$modal-color: rgba(37, 37, 37, 0.70);
+$item-color: rgba(37, 37, 37, 0.50);
+$beige-color: #F7F7F7;
+$black-color: #252525;
+$white-color: #FFF;
+$grey-color: #C3C1E5;
+$red-color: #E50000;
+$dark-grey-color: #666;
+
+$main-font: 'Kanit', sans-serif;
+$secondary-font: 'Inter', sans-serif;
+
+//light theme
+
+:root[data-theme="light"] {
+    --background-color: #FFF;
+    --font-color: #252525;
+    --border: 1px solid #6C63FF;
+    --input-color: #6C63FF;
+    --placeholder-color: #C3C1E5;
+    --input-outline: 2px solid rgba(108, 99, 255, 0.40);
+    --opacity-day: 1;
+    --opacity-night: 0;       
+    --background-color-modal: #F7F7F7;
+    --border-modal: 1px solid transparent;
+    --cancel-color: #F7F7F7;
+}
+
+
+//dark theme
+
+:root[data-theme="dark"] {
+    --background-color: #252525;
+    --font-color: #F7F7F7;
+    --border: 1px solid #F7F7F7;
+    --input-color: #F7F7F7;
+    --placeholder-color: #666;
+    --input-outline: 2px solid #666;
+    --opacity-day: 0;
+    --opacity-night: 1;
+    --background-color-modal: #252525;
+    --border-modal: 1px solid #F7F7F7;
+    --cancel-color: transparent;
+}

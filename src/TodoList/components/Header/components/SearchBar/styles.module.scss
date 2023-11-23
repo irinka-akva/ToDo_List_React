@@ -1,0 +1,25 @@
+@import '@/variables.scss';
+
+.form {
+    position: relative;
+    width: 79%;
+
+    @media (max-width: 480px) {
+        width: 100%;
+    }
+
+    &_search {
+        width: 100%;
+        height: 100%;
+        padding: 8px 45px 8px 16px;
+    }
+
+    &_search_icon {
+        position: absolute;
+        right: 16px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        color: var(--input-color);
+    }
+}

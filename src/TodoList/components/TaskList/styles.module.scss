@@ -1,0 +1,69 @@
+@import '@/variables.scss';
+
+.main {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 480px) {
+        min-height: 300px;
+    }
+
+    &_list {
+        margin: 0;
+        padding: 0 15%;
+        list-style-type: none;
+        max-height: 550px;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 0;
+          }
+
+        @media (max-width: 480px) {
+            padding: 0 5%;
+        }
+    }
+
+    &_modal_btn_wrapper {
+        text-align: right;
+        vertical-align: bottom;
+        margin-top: auto;
+    }
+
+    &_modal_btn {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+
+        &::before {
+            position: absolute;
+            content: '';
+            background: $beige-color;
+            width: 24px;
+            height: 3px;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border-radius: 25px;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            background: $beige-color;
+            width: 3px;
+            height: 24px;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border-radius: 25px;
+        }
+    }
+}
