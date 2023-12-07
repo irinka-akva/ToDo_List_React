@@ -50,69 +50,11 @@ input[type="search"]::-webkit-search-results-decoration {
 
 // For js
 
-// Open modal
-
-body.open-modal {
-    height: 100vh;
-    overflow-y: hidden;
-}
-
 // Night theme 
 
 body.night-theme {
 
-    & .input {
-        border: 1px solid $beige-color;
-        color: $beige-color;
-        background-color: $black-color;
-
-        &::placeholder {
-            color: $dark-grey-color;
-        }
-
-        &:hover,
-        &:focus-visible {
-            outline: 2px solid $dark-grey-color;
-        }
-    }
-
-    & .settings {
-        &-search-icon {
-            color: $beige-color;
-        }
-
-        &-theme {
-
-            &-day {
-                opacity: 1;
-                transition: opacity 0.3s ease;
-            }
-
-            &-night {
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            }
-        }
-    }
-
     & .main-list-item.checked .main-list-item-text {
         color: rgba(255, 255, 255, 0.50);
-    }
-
-    & .modal {
-        &-wrapper {
-            background-color: $black-color;
-            border: 1px solid $beige-color;
-        }
-
-        &-cancel {
-            background-color: transparent;
-
-            &:hover,
-            &:focus-visible,
-            &:active {
-                background-color: transparent;
-            }
-        }
     }
 }

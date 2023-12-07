@@ -29,6 +29,7 @@ $secondary-font: 'Inter', sans-serif;
     --background-color-modal: #F7F7F7;
     --border-modal: 1px solid transparent;
     --cancel-color: #F7F7F7;
+    --item-color: rgba(37, 37, 37, 0.50);
 }
 
 
@@ -46,4 +47,5 @@ $secondary-font: 'Inter', sans-serif;
     --background-color-modal: #252525;
     --border-modal: 1px solid #F7F7F7;
     --cancel-color: transparent;
+    --item-color: rgba(255, 255, 255, 0.50);
 }

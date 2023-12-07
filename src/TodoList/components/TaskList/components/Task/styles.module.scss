@@ -21,7 +21,7 @@
         border-radius: 2px;
         margin-right: 17px;
         transition: background-color 0.3s ease,
-            box-shadow 0, 3s ease;
+            box-shadow 0.3s ease;
 
         &:hover,
         &:focus-visible,
@@ -89,5 +89,18 @@
         &:active svg .list_item_path {
             stroke: $red-color;
         }
+    }
+
+    &.checked .list-item-btn {
+        background-color: $purple-color;
+
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    &.checked {
+        text-decoration: line-through;
+        color: var(--item-color);
     }
 }
