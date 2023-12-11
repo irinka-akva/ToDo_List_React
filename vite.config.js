@@ -4,6 +4,7 @@ import * as path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/ToDo_List_React',
   plugins: [react()],
   resolve: {
     alias: [
