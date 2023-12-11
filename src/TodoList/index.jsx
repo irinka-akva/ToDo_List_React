@@ -74,7 +74,7 @@ const TodoList = () => {
    };
 
    // Filter and search
-   const [filterValue, setFilterValue] = useState('');
+   const [filterValue, setFilterValue] = useState(localStorage.getItem('select') || 'ALL');
    const [searchValue, setSearchValue] = useState('');
 
    const onChangeFilterValue = (evt) => {
@@ -109,7 +109,7 @@ const TodoList = () => {
    // Local storage
    useEffect(() => {
       localStorage.setItem('tasks', JSON.stringify(taskList));
-      localStorage.setItem('select', JSON.stringify(filterValue));
+      localStorage.setItem('select', filterValue);
    }, [taskList, filterValue]);
 
 
