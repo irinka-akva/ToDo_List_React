@@ -2,10 +2,11 @@ import React from 'react';
 import styles from './styles.module.scss'
 import InputField from 'ui/InputField'
 
-const SearchBar = () => {
+const SearchBar = ({searchValue, setSearchValue}) => {
    return (
       <div className={styles.form}>
-         <InputField innerClass={styles.form_search} type='search' name ='search' id='search' placeholder='Search note...'/>
+         <InputField innerClass={styles.form_search} type='search' name ='search' id='search' placeholder='Search note...'
+         value={searchValue} onChange={(evt)=> {setSearchValue(evt.target.value)}}/>
          <svg className={styles.form_search_icon} xmlns="http://www.w3.org/2000/svg" width="21" height="22"
             viewBox="0 0 21 22" fill="currentColor">
             <path

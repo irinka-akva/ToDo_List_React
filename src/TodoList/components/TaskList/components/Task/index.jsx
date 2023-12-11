@@ -4,34 +4,19 @@ import cn from 'classnames';
 import Button from 'ui/Button';
 import IconButton from 'ui/IconButton';
 
-const Task = ({ taskList, setTaskList }) => {
-
-    const deleteTask = (id) => {
-        let newTaskList = taskList.filter(task => task.id !== id);
-        setTaskList(newTaskList);
-    };
-
-    const setTaskMark = (id) => {
-        let newTaskList = taskList.filter(task => {
-            if (task.id == id) {
-                task.done = !task.done;
-            }
-            return task;
-        });
-        setTaskList(newTaskList);
-    };
+const Task = ({ getTaskList, onEditTask, onSetTaskMark, onDeleteTask }) => {
 
     return (
         <div> {
-            taskList.map(task => {
+            getTaskList.map(task => {
                 return (
                     <li className={cn(styles.list_item, {
-                        [styles.checked]: task.done,
-                    })} id={task.id} key={task.id}>
-                        <Button innerClass={styles.list_item_btn} type='button' onClick={() => { setTaskMark(task.id) }} />
+                        [styles.checked]: task.done})} id={task.id} key={task.id}>
+                        <Button innerClass={cn(styles.list_item_btn, {
+                            [styles.btn_checked]: task.done})} type='button' onClick={() => { onSetTaskMark(task.id) }} />
                         <span className={styles.list_item_text}>{task.text}</span>
                         <div className={styles.list_item_btn_wrapper}>
-                            <IconButton innerClass={styles.list_item_btn_edit}>
+                            <IconButton innerClass={styles.list_item_btn_edit} onClick={()=> {onEditTask(task.id)}}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"
                                     fill="none">
                                     <path className={styles.list_item_path}
@@ -39,7 +24,7 @@ const Task = ({ taskList, setTaskList }) => {
                                         stroke="#CDCDCD" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </IconButton>
-                            <IconButton innerClass={styles.list_item_btn_delete} onClick={() => { deleteTask(task.id) }}>
+                            <IconButton innerClass={styles.list_item_btn_delete} onClick={() => { onDeleteTask(task.id) }}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
                                     fill="none">
                                     <path className={styles.list_item_path}

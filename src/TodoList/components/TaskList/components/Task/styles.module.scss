@@ -11,7 +11,6 @@
     }
 
     &_btn {
-        position: relative;
         padding: 0;
         width: 26px;
         height: 26px;
@@ -29,23 +28,7 @@
             background-color: transparent;
         }
 
-        &::before {
-            position: absolute;
-            content: '';
-            background-image: url('../img/tick.svg');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 15px;
-            height: 15px;
-            right: 0;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+        
     }
 
     &_text {
@@ -91,16 +74,36 @@
         }
     }
 
-    &.checked .list-item-btn {
-        background-color: $purple-color;
-
-        &::before {
-            opacity: 1;
-        }
-    }
-
     &.checked {
         text-decoration: line-through;
         color: var(--item-color);
     }
+
+    &_btn.btn_checked {
+        position: relative;
+        text-decoration: line-through;
+        color: var(--item-color);
+    
+        background-color: $purple-color;
+    
+        &::before {
+            position: absolute;
+            content: '';
+            background-image: url('src/assets/tick.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 15px;
+            height: 15px;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            transition: opacity 0.3s ease;
+    }
+    }
 }
+
+
+
