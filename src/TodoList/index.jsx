@@ -84,22 +84,22 @@ const TodoList = () => {
    const getTaskList = useMemo(() => {
       if(!searchValue) {
       switch (filterValue) {
-         case 'COMPLETE':
+         case 'complete'.toUpperCase():
             return taskList.filter((task => task.done === true));
-         case 'INCOMPLETE':
+         case 'incomplete'.toUpperCase():
             return taskList.filter((task => task.done === false));
-         case 'ALL':
+         case 'all'.toUpperCase():
             return taskList
       }
    } else {
       switch (filterValue) {
-         case 'COMPLETE':
+         case 'complete'.toUpperCase():
             return taskList.filter((task => task.done === true && 
                task.text.toUpperCase().indexOf(searchValue.trim().toUpperCase())!== -1));
-         case 'INCOMPLETE':
+         case 'incomplete'.toUpperCase():
             return taskList.filter((task => task.done === false && 
                task.text.toUpperCase().indexOf(searchValue.trim().toUpperCase())!== -1));
-         case 'ALL':
+         case 'all'.toUpperCase():
             return taskList.filter((task => task.text.toUpperCase().indexOf(searchValue.trim().toUpperCase())!== -1));
       }
    }

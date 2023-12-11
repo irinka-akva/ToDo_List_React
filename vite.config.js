@@ -4,7 +4,6 @@ import * as path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/ToDo_List_React',
   plugins: [react()],
   resolve: {
     alias: [
@@ -12,4 +11,5 @@ export default defineConfig({
       { find: 'ui', replacement: path.resolve(__dirname, 'src/ui') },
   ],
   },
+   base: '/ToDo_List_React',
 })
