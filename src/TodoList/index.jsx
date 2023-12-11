@@ -74,7 +74,7 @@ const TodoList = () => {
    };
 
    // Filter and search
-   const [filterValue, setFilterValue] = useState(JSON.parse(localStorage.getItem('select')) || 'ALL');
+   const [filterValue, setFilterValue] = useState(JSON.parse(localStorage.getItem('select')) || '');
    const [searchValue, setSearchValue] = useState('');
 
    const onChangeFilterValue = (evt) => {
@@ -82,24 +82,25 @@ const TodoList = () => {
    };
 
    const getTaskList = useMemo(() => {
+      console.log(filterValue)
       if(!searchValue) {
       switch (filterValue) {
-         case 'complete'.toUpperCase():
+         case 'COMPLETE':
             return taskList.filter((task => task.done === true));
-         case 'incomplete'.toUpperCase():
+         case 'INCOMPLETE':
             return taskList.filter((task => task.done === false));
-         case 'all'.toUpperCase():
+         case 'ALL':
             return taskList
       }
    } else {
       switch (filterValue) {
-         case 'complete'.toUpperCase():
+         case 'COMPLETE':
             return taskList.filter((task => task.done === true && 
                task.text.toUpperCase().indexOf(searchValue.trim().toUpperCase())!== -1));
-         case 'incomplete'.toUpperCase():
+         case 'INCOMPLETE':
             return taskList.filter((task => task.done === false && 
                task.text.toUpperCase().indexOf(searchValue.trim().toUpperCase())!== -1));
-         case 'all'.toUpperCase():
+         case 'ALL':
             return taskList.filter((task => task.text.toUpperCase().indexOf(searchValue.trim().toUpperCase())!== -1));
       }
    }
