@@ -82,7 +82,6 @@ const TodoList = () => {
    };
 
    const getTaskList = useMemo(() => {
-      console.log(filterValue)
       if(!searchValue) {
       switch (filterValue) {
          case 'COMPLETE':
