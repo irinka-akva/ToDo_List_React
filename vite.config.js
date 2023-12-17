@@ -11,5 +11,5 @@ export default defineConfig({
       { find: 'ui', replacement: path.resolve(__dirname, 'src/ui') },
   ],
   },
-   base: '/ToDo_List_React',
+  //  base: '/ToDo_List_React',
 })

@@ -3,6 +3,7 @@ import TaskList from './components/TaskList'
 import Modal from './components/Modal'
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { getTask } from '../utils';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 const TodoList = () => {
 
@@ -94,11 +95,7 @@ const TodoList = () => {
    }, [filterValue, searchValue, taskList])
 
    // Local storage
-   useEffect(() => {
-      localStorage.setItem('tasks', JSON.stringify(taskList));
-      localStorage.setItem('select', filterValue);
-   }, [taskList, filterValue]);
-
+   useLocalStorage(taskList, filterValue);
 
    return (
       <div>
