@@ -2,6 +2,7 @@ import Header from './components/Header'
 import TaskList from './components/TaskList'
 import Modal from './components/Modal'
 import React, { useState, useEffect, useRef, useMemo } from "react";
+import { getTask } from '../utils';
 
 const TodoList = () => {
 
@@ -82,27 +83,14 @@ const TodoList = () => {
    };
 
    const getTaskList = useMemo(() => {
-      if(!searchValue) {
       switch (filterValue) {
          case 'COMPLETE':
-            return taskList.filter((task => task.done === true));
+            return getTask(taskList, true, searchValue);
          case 'INCOMPLETE':
-            return taskList.filter((task => task.done === false));
+            return getTask(taskList, false, searchValue);
          case 'ALL':
-            return taskList
+            return getTask(taskList, null, searchValue);
       }
-   } else {
-      switch (filterValue) {
-         case 'COMPLETE':
-            return taskList.filter((task => task.done === true && 
-               task.text.toUpperCase().indexOf(searchValue.trim().toUpperCase())!== -1));
-         case 'INCOMPLETE':
-            return taskList.filter((task => task.done === false && 
-               task.text.toUpperCase().indexOf(searchValue.trim().toUpperCase())!== -1));
-         case 'ALL':
-            return taskList.filter((task => task.text.toUpperCase().indexOf(searchValue.trim().toUpperCase())!== -1));
-      }
-   }
    }, [filterValue, searchValue, taskList])
 
    // Local storage
@@ -114,10 +102,11 @@ const TodoList = () => {
 
    return (
       <div>
-         <Header changeFilterValue={onChangeFilterValue} 
-         filterValue={filterValue} 
-         searchValue={searchValue} 
-         setSearchValue={setSearchValue}/>
+         <Header
+            changeFilterValue={onChangeFilterValue} 
+            filterValue={filterValue} 
+            searchValue={searchValue} 
+            setSearchValue={setSearchValue}/>
          <TaskList
             onOpenModal={onOpenModal}
             getTaskList={getTaskList}
